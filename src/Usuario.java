@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public abstract class Usuario {
 	private String nombre;
@@ -39,6 +40,24 @@ public abstract class Usuario {
 	@Override
 	public String toString() {
 		return "Usuario [nombre=" + nombre + ", dni=" + dni + ", rol=" + rol + ", pin=" + pin + "]";
+	}
+	public boolean iniciarSesion(String dni,String pin) {
+		if (this.getDni().equals(dni)) {
+			if (this.getPin().equals(pin)) {
+				return true;
+			} else {
+				JOptionPane.showMessageDialog(null, "Pin incorrecto");
+				return false;
+			}
+		} else {
+			JOptionPane.showMessageDialog(null, "Usuario incorrecto");
+			return false;
+		}
+
+	}
+	
+	public void menu(Cajero cajero) {
+		JOptionPane.showMessageDialog(null, "Ingresaste al cajero: "+ cajero);
 	}
 	
 }	

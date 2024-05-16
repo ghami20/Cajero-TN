@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class Empleado extends Usuario{
 	private String puesto;
@@ -22,5 +23,9 @@ public class Empleado extends Usuario{
 	
 	public boolean AgregarDinero(int monto) {
 		return true;
+	}
+	@Override
+	public void menu(Cajero cajero) {
+		JOptionPane.showMessageDialog(null, "Bienvenido empleado");
 	}
 }
